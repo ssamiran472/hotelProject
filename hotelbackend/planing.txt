@@ -1,0 +1,12 @@
+hotels ={
+    ->rooms,
+    ->booking system,
+}
+
+user ={
+    ->nearest hotels
+    ->room filter
+    ->featurs 
+    ->booking system
+    ->...
+}
