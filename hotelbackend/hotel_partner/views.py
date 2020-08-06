@@ -3,8 +3,8 @@ from rest_framework import generics, mixins, status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .serializers import HotelPartnerSerializers, ImagesOfHotelsSerializers
-from .models import HotelPartners, ImagesOfHotels
+from .serializers import HotelPartnerSerializers, ImagesOfHotelsSerializers, ServicesSerializer
+from .models import HotelPartners, ImagesOfHotels, Services
 
 
 class hotels(mixins.ListModelMixin, generics.GenericAPIView):
@@ -21,3 +21,11 @@ def images(request):
     serializer = HotelPartnerSerializers(
         queryset, context={'request': request}, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class getservices(mixins.ListModelMixin, generics.RetrieveAPIView):
+    serializer_class = ServicesSerializer
+    queryset = Services.objects.all().order_by('id')
+
+    def get(self, request):
+        return self.list(request)

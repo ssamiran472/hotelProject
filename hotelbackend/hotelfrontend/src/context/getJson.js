@@ -10,8 +10,11 @@ const ContextProvider = (props) => {
 
   const getPosts = async () => {
     const { data } = await axios.get(URL);
+    console.log("<<<<<<<<<Context api>>>>>>>>>>>>>>", data);
     setData(data);
+    setLoading(false);
   };
+
   useEffect(() => {
     getPosts();
     console.log("from useEffect ...", data);

@@ -59,3 +59,8 @@ class Extramodel(models.Model):
 
     name = models.CharField(default='', max_length=225)
     country = models.CharField(default='India', max_length=255)
+
+
+class Services(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()

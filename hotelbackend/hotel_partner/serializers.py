@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import HotelPartners, ImagesOfHotels, Reviews, Extramodel
+from .models import HotelPartners, ImagesOfHotels, Reviews, Extramodel, Services
 
 
 class ReviewsSerializer(serializers.ModelSerializer):
@@ -36,3 +36,9 @@ class HotelPartnerSerializers(serializers.ModelSerializer):
         fields = ['id', 'owner', 'hotelimage', 'city', 'address']
 
         read_only = ['hotelimage']
+
+
+class ServicesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Services
+        fields = ['id', 'name', 'description']

@@ -1,0 +1,12 @@
+.fontawsome {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+    .fontawsome {
+        flex-direction: column;
+    }
+}

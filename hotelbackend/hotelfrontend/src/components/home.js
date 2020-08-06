@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
 import home from "../images/home2.webp";
 import { HotelContext } from "../context/getJson";
 import Room from "../components/room";
+import Services from "../components/services";
+import Heading from "../components/heading";
+import Description from "./description";
 
 const Home = () => {
   let { data } = useContext(HotelContext);
-  console.log(data);
   return (
     <div className="col-12 pl-0 pr-0">
       <Main
@@ -17,16 +19,24 @@ const Home = () => {
         subTitle="Deluxe Rooms Starting At $299"
       />
       <div className="row">
+        <div className="text-center col-12">
+          <Heading text="Services" />
+        </div>
+        <Services />
+      </div>
+
+      <div className="row">
+        <div className="text-center col-12 mb-md-2">
+          <Heading text="Featured Rooms" />
+        </div>
         {data.map((hotel) => {
-          let item = hotel.hotelimage;
           return (
             <div key={hotel.id} className="col-12  col-md-4 pb-2">
-              {item.map((data) => (
-                <Room key={data.id} hotelInfo={data} />
-              ))}
+              <Room key={hotel.id} hotelInfo={hotel} />
             </div>
           );
         })}
+        <Route path={`/rooms/:id`} component={Description} />
       </div>
     </div>
   );

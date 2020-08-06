@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Main } from "./home";
 import RoomsBackground from "../images/rooms.jpg";
 import styled from "styled-components";
@@ -8,6 +8,25 @@ import Room from "./room";
 
 const Rooms = () => {
   const { data } = useContext(HotelContext);
+  let [copyData, setCopyData] = useState([]);
+  
+  const filtering = (price, room, guest, pet, breakFast) => {
+    console.log("values", price, room, guest, pet, breakFast);
+    const filtered = data.filter(
+      (data) =>
+        data.price <= price &&
+        data.breakfast === breakFast &&
+        data.pet === pet &&
+        data.capacity <= guest &&
+        (room === "all" || data.type_of === room)
+    );
+    // console.log("after filter acording filter", filtered);
+    setCopyData(filtered);
+  };
+
+  useEffect(() => {
+    setCopyData(data.slice(0));
+  }, [data]);
 
   return (
     <>
@@ -18,9 +37,10 @@ const Rooms = () => {
         title="Our Rooms"
         subTitle=""
       />
-      <Filter className="col-12" />
+      {console.log("filtering data=====>>>>>", copyData)}
+      <Filter className="col-12" filter={filtering} />
       <div className="row">
-        {data.map((info) => {
+        {copyData.map((info) => {
           return (
             <div key={info.id} className="col-12  col-md-4 pb-2 text-center">
               <Room key={info.id} hotelInfo={info} />
