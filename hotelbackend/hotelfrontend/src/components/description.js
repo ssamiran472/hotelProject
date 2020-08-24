@@ -78,15 +78,15 @@ const Descriptoin = (props) => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="container">
         <h1>Extras</h1>
 
-        <ul className="ul">
-          <li>Pliush pillows and breathable bed linens</li>
-          <li>Complimentry refreshments</li>
-          <li>Comfortable beds</li>
-          <li>Soft, oversized bath towles</li>
-          <li>Adequate safety/scurity</li>
+        <ul className="ul row">
+          <li className="col-md-4">Pliush pillows and breathable bed linens</li>
+          <li className="col-md-4">Complimentry refreshments</li>
+          <li className="col-md-4">Comfortable beds</li>
+          <li className="col-md-4">Soft, oversized bath towles</li>
+          <li className="col-md-4">Adequate safety/scurity</li>
         </ul>
       </div>
     </>
