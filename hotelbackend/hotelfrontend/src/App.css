@@ -1,3 +1,13 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  color: rgb(175, 166, 135);
+}
+div {
+  font-size: 2rem;
+}
+
 .main {
   background-image: url(./images/home2.webp);
   background-repeat: no-repeat;

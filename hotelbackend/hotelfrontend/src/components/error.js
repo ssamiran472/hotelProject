@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Main } from "./home";
+import { Main } from "./home";
 
 const Error = () => {
   return (

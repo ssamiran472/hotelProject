@@ -31,7 +31,7 @@ const Room = ({ hotelInfo, match }) => {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      <img src={hotelInfo.images} />
+      <img src={hotelInfo.images} alt="image" />
       <div className="text-note">
         <p>
           <b>${hotelInfo.price}</b>

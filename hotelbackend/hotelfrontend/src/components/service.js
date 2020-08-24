@@ -6,7 +6,7 @@ const Service = (props) => {
     <div className="m-1 m-md-2">
       <div className="col-12 text-center">
         <FontAwesomeIcon
-          style={{ color: "#c4a14f", fontSize: "20px" }}
+      style={{ color: "#c4a14f", fontSize: "20px" }}
           icon={props.icon}
         />
       </div>

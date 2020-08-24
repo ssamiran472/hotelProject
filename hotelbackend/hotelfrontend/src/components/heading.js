@@ -2,7 +2,8 @@ import React from "react";
 import Style from "styled-components";
 
 const Head = Style.h1`
-    color: rgba(219, 174, 69, 90%)
+  font-size: 5rem;
+  color: rgba(173, 145, 69, 90%)
 `;
 
 const Heading = (props) => {
